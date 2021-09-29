@@ -14,8 +14,8 @@
 using std::vector;
 
 // RK4 Solver for single ODE
-TGraph RK4Solve(double (*f)(double x, double y), double y0,
-		int nsteps, double x0, double xmax);
+TGraph RK4Solve(double (*f)(double x, double y), double &y,
+		int nsteps, double &x, double xmax);
 
 // 
 // RK4 solvers for set of N 1st order ODEs (1 independent parameter)
@@ -46,29 +46,27 @@ typedef func_t* pfunc_t;
 
 // The solvers will return a set of graphs for each dependent variable
 
-TGraph RK4Solve(double (*f)(double x, double y), double y0,
-		int nsteps, double x0, double xmax);
 
-vector<double> RK4StepN(vector<pfunc_t> &fnlist, vector<double> y,
-			double x, double h, void *params=0);
+vector<double> RK4StepN(vector<pfunc_t> &fnlist, vector<double> y0,
+			double x0, double h, void *params=0);
 
-vector<TGraph> RK4SolveN(vector<pfunc_t> &fnlist, vector<double> &y0,
-			 int nsteps, double x0, double xmax, void *params=0,
+vector<TGraph> RK4SolveN(vector<pfunc_t> &fnlist, vector<double> &y,
+			 int nsteps, double &x, double xmax, void *params=0,
 			 pfunc_t fstop=0);
 
 void RK4SolveNx(vector<pfunc_t> &fnlist, vector<double> &y,
 		int nsteps, double x0, double xmax, void *params=0,
 		pfunc_t fstop=0);
 
-vector<TGraph> RK4SolveN(vector<pfunc_t> &fnlist, vector<double> &y0,
-			 double h, double x0, pfunc_t fstop, void *params=0,
+vector<TGraph> RK4SolveN(vector<pfunc_t> &fnlist, vector<double> &y,
+			 double h, double &x, void *params=0, pfunc_t fstop=0,
 			 int nmax=1000);
 
-vector<TGraph> RK4SolveNA(vector<pfunc_t> &fnlist, vector<double> &y0,
-			  int nsteps, double x0, double xmax, void *params=0,
+vector<TGraph> RK4SolveNA(vector<pfunc_t> &fnlist, vector<double> &y,
+			  int nsteps, double &x, double xmax, void *params=0,
 			  pfunc_t fstop=0, double errdef=1e-9, int maxrep=5);
 
-vector<TGraph> RK4SolveNA(vector<pfunc_t> &fnlist, vector<double> &y0,
-			  double h,  double x0, pfunc_t fstop, void *params=0,
+vector<TGraph> RK4SolveNA(vector<pfunc_t> &fnlist, vector<double> &y,
+			  double h,  double &x, void *params=0, pfunc_t fstop=0, 
 			  double errdef=1e-9, int maxrep=5, int maxsteps=1000);
 

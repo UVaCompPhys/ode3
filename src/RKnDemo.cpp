@@ -119,7 +119,9 @@ int main(int argc, char **argv){
   y0[1]=70;  // init velocity along i axis
   y0[2]=0;   // repeat for j-axis
   y0[3]=70;
-  auto tgN = RK4SolveN(v_fun, y0, 200, 0, 20, p_par, f_stop);
+  double x=0;
+  double xmax=20;
+  auto tgN = RK4SolveN(v_fun, y0, 200, x, xmax, p_par, f_stop);
   TCanvas *c2 = new TCanvas("c2","ODE solutions 2",dw,dh);
   tgN[2].Draw("a*");
   c2->Draw();
