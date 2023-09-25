@@ -1,3 +1,7 @@
+# top level Makefile
+# this "simply" runs the make in the two subdirectories: odelib and src
+
+
 ODELIB =  $(PWD)/odelib
 export ODELIB
 

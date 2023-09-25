@@ -1,3 +1,6 @@
+# build the ode solver library
+# both shared and static libraries are built
+
 ROOTCFLAGS = $(shell root-config --cflags)
 ROOTLIBS   = $(shell root-config --libs)
 ROOTGLIBS  = $(shell root-config --glibs)
