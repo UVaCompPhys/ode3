@@ -12,7 +12,6 @@
 #include "TROOT.h"
 #include "TApplication.h"
 #include "TLegend.h"
-#include "TFile.h"
 #include "TStyle.h"
 #include "TGClient.h"
 #include "TF1.h"

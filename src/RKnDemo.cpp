@@ -101,8 +101,8 @@ int main(int argc, char **argv){
   pars.air_k=0.1;
   void *p_par = (void*) &pars;
 
-  double theta=45;   // initial angle
-  double v0=100;
+  double theta=45;   // initial angle degrees
+  double v0=100;     // m/s
   
   int c;
   while ((c = getopt (argc, argv, "v:t:m:k:")) != -1)
