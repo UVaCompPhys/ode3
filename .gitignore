@@ -1,7 +1,13 @@
+.ipynb_checkpoints/
+
 src/RKnDemo
 src/RKnStep
 src/RKnTest
-RKnDemo.root
+src/projGSL
+src/baseball1
+src/baseball2
+src/RKnDemo.root
+src/projGSL.root
 
 # Prerequisites
 *.d
